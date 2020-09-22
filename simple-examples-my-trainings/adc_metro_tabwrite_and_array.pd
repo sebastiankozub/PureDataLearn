@@ -1,0 +1,20 @@
+#N canvas 328 410 650 461 12;
+#N canvas 931 356 754 414 (subpatch) 0;
+#X array adcVisualOut 128 float 0;
+#X coords 0 1 127 -1 200 140 1 0 0;
+#X restore 284 46 graph;
+#X obj 188 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 122 45 adc~, f 10;
+#X obj 186 176 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 123 113 *~ 10;
+#X msg 228 97 stop;
+#X obj 152 212 tabwrite~ adcVisualOut print;
+#X obj 173 140 metro 100;
+#X connect 1 0 7 0;
+#X connect 2 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 7 0 3 0;
+#X connect 7 0 6 0;
